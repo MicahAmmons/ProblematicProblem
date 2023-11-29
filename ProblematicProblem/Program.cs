@@ -20,7 +20,14 @@ internal class ProblematicProblem
             Console.WriteLine();
             Console.Write("What is your age? ");
             int userAge;
-            bool isAnInt = int.TryParse(Console.ReadLine(), out userAge);
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out userAge))
+            {
+            }
+            else
+            {
+                Console.WriteLine($"Unable to parse '{input}'");
+            }
             Console.WriteLine();
             Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
             string userWantsSeeList = Console.ReadLine().ToLower();
